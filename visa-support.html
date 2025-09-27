@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visa Support | KK Tour & Travel</title>
+  <meta name="description" content="Professional visa support services are coming soon from KK Tour & Travel. Simplify your travel documentation process.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 102, 204, 0.7)), 
+                  url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo {
+      max-width: 150px;
+      margin-bottom: 30px;
+    }
+    
+    .content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+    
+    h1 {
+      color: #004080;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.3rem;
+      color: #0066cc;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    
+    .message {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      color: #555;
+    }
+    
+    .launching-soon {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #004080;
+      margin: 25px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+    }
+    
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 35px 0;
+    }
+    
+    .service {
+      background: #f5f9ff;
+      padding: 20px 15px;
+      border-radius: 10px;
+      width: 170px;
+      text-align: center;
+      border-bottom: 4px solid #004080;
+    }
+    
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #004080;
+    }
+    
+    .service-text {
+      font-weight: 600;
+      color: #004080;
+      font-size: 0.95rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: #004080;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
+    }
+    
+    .btn:hover {
+      background: #0066cc;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.4);
+    }
+    
+    .countdown {
+      margin: 25px 0;
+      font-size: 1.2rem;
+      color: #004080;
+      font-weight: 600;
+      background: #f0f7ff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    
+    .process-steps {
+      background: #e6f2ff;
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: left;
+    }
+    
+    .process-steps h3 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .step-number {
+      background: #004080;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .step-text {
+      flex: 1;
+    }
+    
+    .countries {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .country-tag {
+      background: #004080;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      background: rgba(0, 38, 77, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @media (max-width: 768px) {
+      .content {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .launching-soon {
+        font-size: 2.5rem;
+      }
+      
+      .services {
+        gap: 15px;
+      }
+      
+      .service {
+        width: 150px;
+        padding: 15px 10px;
+      }
+      
+      .step {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+      
+      .step-number {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+      
+      .launching-soon {
+        font-size: 2rem;
+      }
+      
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .service {
+        width: 100%;
+        max-width: 250px;
+      }
+      
+      .countries {
+        gap: 8px;
+      }
+      
+      .country-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="kktourtravel.png" alt="KK Tour & Travel Logo" class="logo">
+    
+    <div class="content">
+      <h1>Visa Support</h1>
+      <div class="subtitle">Simplifying Your Travel Documentation</div>
+      
+      <div class="launching-soon">Launching Soon</div>
+      
+      <p class="message">
+        We're developing a comprehensive visa support service to make international travel planning 
+        stress-free. Our expert team will guide you through the entire visa application process, 
+        ensuring all documentation is accurate and submitted correctly.
+      </p>
+      
+      <div class="services">
+        <div class="service">
+          <div class="service-icon">📋</div>
+          <div class="service-text">Document Preparation</div>
+        </div>
+        <div class="service">
+          <div class="service-icon">🔍</div>
+          <div class="service-text">Application Review</div>
+        </div>
+        <div class="service">
+          <div class="service-icon">⚡</div>
+          <div class="service-text">Express Processing</div>
+        </div>
+        <div class="service">
+          <div class="service-icon">📞</div>
+          <div class="service-text">Consultation Support</div>
+        </div>
+      </div>
+      
+      <div class="process-steps">
+        <h3>Our Visa Support Process</h3>
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-text">Initial consultation to understand your travel requirements</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-text">Document checklist and preparation guidance</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-text">Application form completion and review</div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-text">Submission tracking and status updates</div>
+        </div>
+      </div>
+      
+      <div class="countries">
+        <div class="country-tag">Europe</div>
+        <div class="country-tag">USA</div>
+        <div class="country-tag">UK</div>
+        <div class="country-tag">Canada</div>
+        <div class="country-tag">Australia</div>
+        <div class="country-tag">Asia</div>
+      </div>
+      
+      <p class="message">
+        Our service will cover visa applications for popular destinations worldwide, including 
+        tourist, business, and student visas. We stay updated with the latest immigration 
+        policies to provide you with the most current information and requirements.
+      </p>
+      
+      <div class="countdown">Service launching Soon</div>
+      
+      <a href="index.html" class="btn">Return to Homepage</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 KK Tour & Travel | Minsk, Belarus</p>
+    <p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
+  </footer>
+
+  </body>
+</html>
