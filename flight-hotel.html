@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight & Hotel Reservations | KK Tour & Travel</title>
+  <meta name="description" content="Convenient flight and hotel booking services are coming soon from KK Tour & Travel. Get the best deals on travel accommodations.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 102, 204, 0.7)), 
+                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo {
+      max-width: 150px;
+      margin-bottom: 30px;
+    }
+    
+    .content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+    
+    h1 {
+      color: #004080;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.3rem;
+      color: #0066cc;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    
+    .message {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      color: #555;
+    }
+    
+    .launching-soon {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #004080;
+      margin: 25px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+    }
+    
+    .benefits {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 35px 0;
+    }
+    
+    .benefit {
+      background: #f5f9ff;
+      padding: 20px 15px;
+      border-radius: 10px;
+      width: 170px;
+      text-align: center;
+      border-left: 4px solid #004080;
+    }
+    
+    .benefit-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #004080;
+    }
+    
+    .benefit-text {
+      font-weight: 600;
+      color: #004080;
+      font-size: 0.95rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: #004080;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
+    }
+    
+    .btn:hover {
+      background: #0066cc;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.4);
+    }
+    
+    .countdown {
+      margin: 25px 0;
+      font-size: 1.2rem;
+      color: #004080;
+      font-weight: 600;
+      background: #f0f7ff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    
+    footer {
+      background: rgba(0, 38, 77, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @media (max-width: 768px) {
+      .content {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .launching-soon {
+        font-size: 2.5rem;
+      }
+      
+      .benefits {
+        gap: 15px;
+      }
+      
+      .benefit {
+        width: 150px;
+        padding: 15px 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+      
+      .launching-soon {
+        font-size: 2rem;
+      }
+      
+      .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .benefit {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="kktourtravel.png" alt="KK Tour & Travel Logo" class="logo">
+    
+    <div class="content">
+      <h1>Flight & Hotel Reservations</h1>
+      <div class="subtitle">Seamless Travel Bookings Coming Soon</div>
+      
+      <div class="launching-soon">Launching Soon</div>
+      
+      <p class="message">
+        We're developing an advanced booking system that will make planning your trips easier than ever. 
+        Our flight and hotel reservation service will offer competitive prices, flexible options, and 
+        personalized recommendations tailored to your travel preferences.
+      </p>
+      
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon">✈️</div>
+          <div class="benefit-text">Best Flight Deals</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🏨</div>
+          <div class="benefit-text">Quality Accommodations</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-text">Competitive Prices</div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">⏱️</div>
+          <div class="benefit-text">Quick & Easy Booking</div>
+        </div>
+      </div>
+      
+      <p class="message">
+        Our integrated system will allow you to book flights and hotels together for the best package deals, 
+        with 24/7 customer support to assist you throughout your journey.
+      </p>
+      
+      <div class="countdown">Service launching Soon </div>
+      
+      <a href="index14.html" class="btn">Return to Homepage</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 KK Tour & Travel | Minsk, Belarus</p>
+    <p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
+  </footer>
+
+  </body>
+</html>
