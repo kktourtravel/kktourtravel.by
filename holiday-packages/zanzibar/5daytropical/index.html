@@ -189,6 +189,40 @@
       margin-top: 50px;
     }
 
+    /* 3-dot mobile menu icon */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 5px 10px;
+}
+
+/* Hidden mobile menu */
+.mobile-menu {
+  display: none;
+  background: white;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 15px 0;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #004080;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.mobile-menu a:hover {
+  background: #f0f6ff;
+}
+
     /* ===========================
        MOBILE OPTIMIZATION
        =========================== */
@@ -243,6 +277,14 @@
         bottom: 80px;
         right: 20px;
       }
+      .mobile-menu-icon {
+  display: block;
+}
+
+.contact-info {
+  display: none; /* hide desktop nav on mobile */
+}
+
     }
   </style>
 </head>
@@ -255,7 +297,17 @@
       <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
       <h1>KK Tour & Travel</h1>
     </div>
+<div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
+    <div id="mobileMenu" class="mobile-menu">
+  <a href="/holiday-packages/">Holiday Packages</a>
+  <a href="/flight-hotel/">Flight & Hotel</a>
+  <a href="/guided-tours/">Guided Tours</a>
+  <a href="/visa-support/">Visa Support</a>
+  <a href="/blog/">Blog</a>
+  <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
+</div>
 
+    
     <div class="contact-info">
       <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
       <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
@@ -377,6 +429,13 @@
       behavior: "smooth"
     });
   });
+  
+</script>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
 </script>
 
 </body>
