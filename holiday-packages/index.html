@@ -301,6 +301,21 @@
   background: #0066cc;
   transform: translateY(-3px);
 }
+/* Floating WhatsApp Button */
+#whatsappBtn {
+  position: fixed;
+  bottom: 90px; /* sits above Back to Top button */
+  right: 30px;
+  
+  color: white;
+  padding: 14px 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  
+  z-index: 9999;
+  transition: 0.3s ease;
+}
 
     
   </style>
@@ -759,6 +774,10 @@
     });
   });
 </script>
+<!-- Floating WhatsApp Button -->
+<a id="whatsappBtn" href="https://wa.me/375295883464" target="_blank">
+  <img src="whatsapp-icon.png" alt="WhatsApp" style="width:32px;height:32px;">
+</a>
 
   
 </body>
