@@ -1,1 +1,468 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanzibar 5-Day Holiday Package | KK Tour & Travel</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f6ff;
+    margin-top: 90px;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ===========================
+HEADER (Refined)
+=========================== */
+
+header {
+    background: linear-gradient(135deg, #004080, #0066cc);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    height: 56px;
+    gap: 60px; /* Reduced from 100px for better alignment */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* HOME LINK */
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+header img {
+    max-width: 65px;
+    height: auto;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Hover + Mobile Tap Effect */
+.home-link h1 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-link:hover h1 {
+        color: #FFFFFF;
+        transform: scale(1.05);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .home-link:active h1 {
+        color: #FFFFFF;
+        transform: scale(1.05);
+    }
+}
+
+/* NAVIGATION */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ===========================
+PAGE CONTENT
+=========================== */
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #004080;
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background: #004080;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    background: #004080;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0066cc;
+}
+
+/* ===========================
+FLOATING BUTTONS
+=========================== */
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #004080;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+#backToTop:hover {
+    background: #0066cc;
+    transform: translateY(-3px);
+}
+
+#whatsappBtn {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 9999;
+}
+/* ===========================
+       FOOTER
+       =========================== */
+    footer {
+      background: linear-gradient(135deg, #004080, #0066cc);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }    
+/* ===========================
+MOBILE MENU
+=========================== */
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 5px 10px;
+}
+
+.mobile-menu {
+    display: none;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 999;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #004080;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.mobile-menu a:hover {
+    background: #f0f6ff;
+}
+
+/* ===========================
+MOBILE OPTIMIZATION
+=========================== */
+
+@media (max-width: 600px) {
+    body {
+        margin-top: 110px;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p, ul li {
+        font-size: 0.95rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #whatsappBtn {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .contact-info {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-content">
+
+    <!-- UPDATED HOME LINK -->
+    <div class="logo-container">
+        <a href="/" class="home-link">
+            <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
+            <h1>KK Tour & Travel</h1>
+        </a>
+    </div>
+
+    <div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="/holiday-packages/">Holiday Packages</a>
+        <a href="/flight-hotel/">Flight & Hotel</a>
+        <a href="/guided-tours/">Guided Tours</a>
+        <a href="/visa-support/">Visa Support</a>
+        <a href="/blog/">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
+    </div>
+
+    <div class="contact-info">
+        <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
+        <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
+        <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
+        <a href="/visa-support/" class="nav-btn">Visa Support</a>
+        <a href="/blog/" class="nav-btn">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+    </div>
+
+</div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <img src="abudhabi.jpg" class="hero-img" alt="Dubai & Abu Dhabi Tour">
+
+  <h2>Dubai & Abu Dhabi Highlights – 5 Days / 4 Nights</h2>
+  <p>
+    Explore the UAE’s twin jewels with a perfect blend of skyscrapers, culture, theme parks, and desert adventure in one premium 5‑day experience.
+  </p>
+
+  <h2>Itinerary Highlights (Day-by-Day)</h2>
+
+  <h3>🕘 Day 1: Arrival & Dhow Cruise Dinner</h3>
+  <p>Start your UAE journey with a relaxing evening cruise featuring buffet dinner and illuminated skyline views.</p>
+
+  <h3>🕘 Day 2: Dubai City Tour & Burj Khalifa</h3>
+  <p>Discover Dubai’s iconic landmarks and enjoy panoramic views from the 124th floor of the Burj Khalifa.</p>
+
+  <h3>🕘 Day 3: Abu Dhabi City Tour & Ferrari World</h3>
+  <p>Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, and enjoy thrilling rides at Ferrari World.</p>
+
+  <h3>🕘 Day 4: Desert Safari Adventure</h3>
+  <p>Experience dune bashing, camel riding, sandboarding, live shows, and a traditional BBQ dinner.</p>
+
+  <h3>🕘 Day 5: Final Departure</h3>
+  <p>Enjoy breakfast and a smooth private transfer to the airport.</p>
+
+  <h2>Package Price</h2>
+  <p><strong>From $549 per person*</strong></p>
+<!-- TERMS & CONDITIONS -->
+  <div class="terms-box">
+    <strong>Important Notice:</strong><br>
+    All prices are subject to change based on hotel availability, seasonal demand, public holidays, and booking date.  
+    Final rates will be confirmed at the time of reservation.  
+    KK Tour & Travel reserves the right to adjust prices without prior notice.
+  </div>
+
+
+
+  <h2>What’s Included</h2>
+  <ul>
+    <li>4 nights in 4★ or 5★ hotel with breakfast</li>
+    <li>Private VIP transfers</li>
+    <li>Burj Khalifa (124th floor) ticket</li>
+    <li>Sheikh Zayed Mosque & Louvre Abu Dhabi entry</li>
+    <li>Dhow Cruise Dinner</li>
+    <li>Desert Safari with BBQ dinner</li>
+  </ul>
+
+  <h2>What’s Not Included</h2>
+  <ul>
+    <li>UAE Tourist Visa</li>
+    <li>International flights</li>
+    <li>Tourism Dirham Fee</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <h2>Why Book This Tour?</h2>
+  <ul>
+    <li>Two major cities in one seamless itinerary</li>
+    <li>Includes all top attractions</li>
+    <li>Perfect for families, couples, and luxury travelers</li>
+  </ul>
+
+  <a href="/holiday-packages/" class="btn">← Back to Packages</a>
+
+</div>
+
+<!-- Floating Buttons -->
+<div id="backToTop">↑ Top</div>
+
+<a id="whatsappBtn" href="https://wa.me/375295883464" target="_blank">
+    <img src="../../whatsapp-icon.png" alt="WhatsApp" style="width:45px;height:45px;">
+</a>
+
+<footer>
+<p>&copy; 2025 KK Tour & Travel | Professional Travel Agency in Minsk, Belarus</p>
+<p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
+</footer>
+
+<script>
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
