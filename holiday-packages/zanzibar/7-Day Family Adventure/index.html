@@ -1,462 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zanzibar 5-Day Holiday Package | KK Tour & Travel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanzibar 5-Day Holiday Package | KK Tour & Travel</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f6ff;
-      margin-top: 90px;
-      color: #333;
-      line-height: 1.7;
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f6ff;
+    margin-top: 90px;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ===========================
+HEADER (Refined)
+=========================== */
+
+header {
+    background: linear-gradient(135deg, #004080, #0066cc);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    height: 56px;
+    gap: 60px; /* Reduced from 100px for better alignment */
+}
+
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-    /* ===========================
-       HEADER (Refined)
-       =========================== */
-    header {
-      background: linear-gradient(135deg, #004080, #0066cc);
-      color: white;
-      padding: 10px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      height: 56px;
-      gap: 100px; /* brings nav closer to logo */
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    header img {
-      max-width: 65px;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    header h1 {
-      font-size: 1.4rem;
-      margin: 0;
-      white-space: nowrap;
-    }
-
-    .contact-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-bottom: 5px;
-    }
-
-    .contact-info a {
-      color: white;
-      text-decoration: none;
-      font-size: 0.85rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-
-    .contact-info a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    /* ===========================
-       PAGE CONTENT
-       =========================== */
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    h2 {
-      color: #004080;
-      margin-top: 30px;
-      font-size: 1.8rem;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 25px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table th, table td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: center;
-    }
-
-    table th {
-      background: #004080;
-      color: white;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #004080;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 30px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #0066cc;
-    }
-
-    /* ===========================
-       FLOATING BUTTONS (Desktop + Mobile)
-       =========================== */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #004080;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: 0.3s ease;
-      z-index: 9999;
-    }
-
-    #backToTop:hover {
-      background: #0066cc;
-      transform: translateY(-3px);
-    }
-
-    #whatsappBtn {
-      position: fixed;
-      bottom: 90px;
-      right: 30px;
-      z-index: 9999;
-    }
-
-    /* ===========================
-       FOOTER
-       =========================== */
-    footer {
-      background: linear-gradient(135deg, #004080, #0066cc);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
-
-    /* 3-dot mobile menu icon */
-.mobile-menu-icon {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  margin-left: auto;
-  padding: 5px 10px;
+/* HOME LINK */
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Hidden mobile menu */
+header img {
+    max-width: 65px;
+    height: auto;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Hover + Mobile Tap Effect */
+.home-link h1 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-link:hover h1 {
+        color: #004080;
+        transform: scale(1.05);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .home-link:active h1 {
+        color: #004080;
+        transform: scale(1.05);
+    }
+}
+
+/* NAVIGATION */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ===========================
+PAGE CONTENT
+=========================== */
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #004080;
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background: #004080;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    background: #004080;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0066cc;
+}
+
+/* ===========================
+FLOATING BUTTONS
+=========================== */
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #004080;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+#backToTop:hover {
+    background: #0066cc;
+    transform: translateY(-3px);
+}
+
+#whatsappBtn {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 9999;
+}
+
+/* ===========================
+MOBILE MENU
+=========================== */
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 5px 10px;
+}
+
 .mobile-menu {
-  display: none;
-  background: white;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  padding: 15px 0;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  z-index: 999;
+    display: none;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 999;
 }
 
 .mobile-menu a {
-  display: block;
-  padding: 12px 20px;
-  color: #004080;
-  text-decoration: none;
-  font-size: 1rem;
+    display: block;
+    padding: 12px 20px;
+    color: #004080;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 .mobile-menu a:hover {
-  background: #f0f6ff;
+    background: #f0f6ff;
 }
 
-    /* ===========================
-       MOBILE OPTIMIZATION
-       =========================== */
-    @media (max-width: 600px) {
+/* ===========================
+MOBILE OPTIMIZATION
+=========================== */
 
-      body {
+@media (max-width: 600px) {
+    body {
         margin-top: 110px;
         padding: 0 10px;
-      }
+    }
 
-      header h1 {
+    header h1 {
         font-size: 1.2rem;
-      }
+    }
 
-      .container {
+    .container {
         padding: 20px;
         margin: 20px auto;
-      }
+    }
 
-      h2 {
+    h2 {
         font-size: 1.4rem;
-      }
+    }
 
-      p, ul li {
+    p, ul li {
         font-size: 0.95rem;
-      }
+    }
 
-      table {
+    table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-      }
+    }
 
-      table th, table td {
+    table th, table td {
         padding: 8px;
         font-size: 0.85rem;
-      }
+    }
 
-      .btn {
+    .btn {
         width: 100%;
         text-align: center;
         padding: 12px;
         font-size: 1rem;
-      }
+    }
 
-      #backToTop {
+    #backToTop {
         bottom: 20px;
         right: 20px;
-      }
+    }
 
-      #whatsappBtn {
+    #whatsappBtn {
         bottom: 80px;
         right: 20px;
-      }
-      .mobile-menu-icon {
-  display: block;
-}
+    }
 
-.contact-info {
-  display: none; /* hide desktop nav on mobile */
-}
-/* ===========================
-HOME LINK HOVER + MOBILE TAP
-=========================== */
+    .mobile-menu-icon {
+        display: block;
+    }
 
-/* Make the whole logo/title clickable */
-.home-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Smooth transition */
-.home-link h1 {
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Desktop hover effect */
-@media (hover: hover) and (pointer: fine) {
-    .home-link:hover h1 {
-        color: #004080; /* Exact KK Tour & Travel brand blue */
-        transform: scale(1.05);
+    .contact-info {
+        display: none;
     }
 }
-
-/* Mobile tap effect */
-@media (hover: none) and (pointer: coarse) {
-    .home-link:active h1 {
-        color: #004080;
-        transform: scale(1.05);
-    }
-}
-.home-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-}
-/* Smooth transition */
-.home-link h1 {
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Desktop hover */
-@media (hover: hover) and (pointer: fine) {
-    .home-link:hover h1 {
-        color: #004080;
-        transform: scale(1.05);
-    }
-}
-
-/* Mobile tap */
-@media (hover: none) and (pointer: coarse) {
-    .home-link:active h1 {
-        color: #004080;
-        transform: scale(1.05);
-    }
-}
-
-      
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-content">
-        <div class="logo-container">
-          <a href="/" class="home-link">
-      <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
-      <h1>KK Tour & Travel</h1>
-    </div>
-<div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
-    <div id="mobileMenu" class="mobile-menu">
-  <a href="/holiday-packages/">Holiday Packages</a>
-  <a href="/flight-hotel/">Flight & Hotel</a>
-  <a href="/guided-tours/">Guided Tours</a>
-  <a href="/visa-support/">Visa Support</a>
-  <a href="/blog/">Blog</a>
-  <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
-</div>
+<div class="header-content">
 
-    
-    <div class="contact-info">
-      <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
-      <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
-      <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
-      <a href="/visa-support/" class="nav-btn">Visa Support</a>
-      <a href="/blog/" class="nav-btn">Blog</a>
-      <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+    <!-- UPDATED HOME LINK -->
+    <div class="logo-container">
+        <a href="/" class="home-link">
+            <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
+            <h1>KK Tour & Travel</h1>
+        </a>
     </div>
-  </div>
+
+    <div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="/holiday-packages/">Holiday Packages</a>
+        <a href="/flight-hotel/">Flight & Hotel</a>
+        <a href="/guided-tours/">Guided Tours</a>
+        <a href="/visa-support/">Visa Support</a>
+        <a href="/blog/">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
+    </div>
+
+    <div class="contact-info">
+        <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
+        <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
+        <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
+        <a href="/visa-support/" class="nav-btn">Visa Support</a>
+        <a href="/blog/" class="nav-btn">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+    </div>
+
+</div>
 </header>
 
 <!-- MAIN CONTENT -->
 <div class="container">
 
-  <!-- HERO IMAGE -->
-  <img src="tortoise with spices.png" class="hero-img" alt="Zanzibar Family Holiday">
+<img src="tortoise with spices.png" class="hero-img" alt="Zanzibar Family Holiday">
 
-  <h2>Experience the Ultimate 7-Day Zanzibar Family Holiday</h2>
-  <p>
-    Escape to the turquoise waters of the Indian Ocean with our 7-Day, 6-Night Zanzibar Family Adventure.
-    This comprehensive tour balances cultural immersion in the historic streets of Stone Town with serene
-    beach relaxation and thrilling marine excursions. From encountering giant 200-year-old tortoises on
-    Prison Island to savoring authentic Swahili flavors, this package is designed to create lifelong memories.
-  </p>
+<h2>Experience the Ultimate 7-Day Zanzibar Family Holiday</h2>
 
-  <h2>Key Highlights</h2>
-  <ul>
-    <li>Stone Town Heritage Tour – Explore iconic doors, museums, and historic alleys.</li>
-    <li>Prison Island Excursion – Meet giant tortoises & snorkel in coral reefs.</li>
-    <li>Authentic Swahili Cuisine – Lunch at Lukmaan & dinner at Forodhani Market.</li>
-    <li>Spice Farm Journey – Taste cloves, vanilla, nutmeg & tropical fruits.</li>
-    <li>Mnemba Atoll Snorkeling – Full-day marine adventure + sunset dhow cruise.</li>
-    <li>Beach Leisure – Relax on world-famous white-sand beaches.</li>
-  </ul>
+<p>
+Escape to the turquoise waters of the Indian Ocean with our 7-Day, 6-Night Zanzibar Family Adventure.
+This comprehensive tour balances cultural immersion in the historic streets of Stone Town with serene
+beach relaxation and thrilling marine excursions.
+</p>
 
-  <h2>Detailed Itinerary</h2>
-  <ul>
-    <li><strong>Day 1:</strong> Arrival & Welcome – Private transfer to Stone Town hotel.</li>
-    <li><strong>Day 2:</strong> Stone Town Culture & Street Food – Full-day tour + Forodhani dinner.</li>
-    <li><strong>Day 3:</strong> Prison Island & Snorkeling – Half-day excursion + free afternoon.</li>
-    <li><strong>Day 4:</strong> Spice Farm Picnic + Transfer to Beach Resort.</li>
-    <li><strong>Day 5:</strong> Mnemba Island Snorkeling + Sunset Cruise.</li>
-    <li><strong>Day 6:</strong> Full Beach Leisure Day.</li>
-    <li><strong>Day 7:</strong> Departure – Private airport transfer.</li>
-  </ul>
+<h2>Key Highlights</h2>
+<ul>
+<li>Stone Town Heritage Tour</li>
+<li>Prison Island Excursion</li>
+<li>Authentic Swahili Cuisine</li>
+<li>Spice Farm Journey</li>
+<li>Mnemba Atoll Snorkeling</li>
+<li>Beach Leisure</li>
+</ul>
 
-  <h2>Package Details & Pricing</h2>
+<h2>Detailed Itinerary</h2>
+<ul>
+<li><strong>Day 1:</strong> Arrival & Welcome</li>
+<li><strong>Day 2:</strong> Stone Town Culture</li>
+<li><strong>Day 3:</strong> Prison Island</li>
+<li><strong>Day 4:</strong> Spice Farm</li>
+<li><strong>Day 5:</strong> Mnemba Island</li>
+<li><strong>Day 6:</strong> Beach Day</li>
+<li><strong>Day 7:</strong> Departure</li>
+</ul>
 
-  <table>
-    <tr>
-      <th>Group Size</th>
-      <th>Price Per Person</th>
-    </tr>
-    <tr><td>2–4 Guests</td><td>$1,123</td></tr>
-    <tr><td>6–8 Guests</td><td>$1,000</td></tr>
-    <tr><td>10–15 Guests</td><td>$1,075</td></tr>
-    <tr><td>20+ Guests</td><td>$1,055</td></tr>
-  </table>
+<h2>Package Details & Pricing</h2>
+<table>
+<tr><th>Group Size</th><th>Price Per Person</th></tr>
+<tr><td>2–4 Guests</td><td>$1,123</td></tr>
+<tr><td>6–8 Guests</td><td>$1,000</td></tr>
+<tr><td>10–15 Guests</td><td>$1,075</td></tr>
+<tr><td>20+ Guests</td><td>$1,055</td></tr>
+</table>
 
-  <h2>Special Notes</h2>
-  <ul>
-    <li>Best for Families – Activities suitable for all ages.</li>
-    <li>Visa on Arrival – Available for most nationalities.</li>
-    <li>Limited Seats – Book early for 2026.</li>
-  </ul>
-
-  <h2>What is Included</h2>
-  <ul>
-    <li>6 Nights accommodation (Half Board).</li>
-    <li>All airport & excursion transfers.</li>
-    <li>Entrance fees & professional guide services.</li>
-    <li>2 liters of mineral water per person during excursions.</li>
-    <li>Zanzibar Travel Insurance & government taxes.</li>
-  </ul>
-
-  <h2>What is Not Included</h2>
-  <ul>
-    <li>International flights.</li>
-    <li>Gratuities / Tips.</li>
-    <li>Personal items & laundry.</li>
-  </ul>
-
-  <a href="/holiday-packages/" class="btn">← Back to Packages</a>
+<a href="/holiday-packages/" class="btn">← Back to Packages</a>
 
 </div>
 
@@ -464,37 +399,37 @@ HOME LINK HOVER + MOBILE TAP
 <div id="backToTop">↑ Top</div>
 
 <a id="whatsappBtn" href="https://wa.me/375295883464" target="_blank">
-  <img src="../../whatsapp-icon.png" alt="WhatsApp" style="width:45px;height:45px;">
+    <img src="../../whatsapp-icon.png" alt="WhatsApp" style="width:45px;height:45px;">
 </a>
 
 <footer>
-  <p>&copy; 2025 KK Tour & Travel | Professional Travel Agency in Minsk, Belarus</p>
-  <p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
+<p>&copy; 2025 KK Tour & Travel | Professional Travel Agency in Minsk, Belarus</p>
+<p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
 </footer>
 
 <script>
-  const backToTopBtn = document.getElementById("backToTop");
+const backToTopBtn = document.getElementById("backToTop");
 
-  window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      backToTopBtn.style.display = "block";
+        backToTopBtn.style.display = "block";
     } else {
-      backToTopBtn.style.display = "none";
+        backToTopBtn.style.display = "none";
     }
-  });
+});
 
-  backToTopBtn.addEventListener("click", () => {
+backToTopBtn.addEventListener("click", () => {
     window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+        top: 0,
+        behavior: "smooth"
     });
-  });
-  
+});
 </script>
+
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 </script>
 
