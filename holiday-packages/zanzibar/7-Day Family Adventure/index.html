@@ -19,6 +19,10 @@
       color: #333;
       line-height: 1.7;
     }
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 
     /* ===========================
        HEADER (Refined)
@@ -311,6 +315,33 @@ HOME LINK HOVER + MOBILE TAP
 }
 
 /* Mobile tap effect */
+@media (hover: none) and (pointer: coarse) {
+    .home-link:active h1 {
+        color: #004080;
+        transform: scale(1.05);
+    }
+}
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+/* Smooth transition */
+.home-link h1 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+    .home-link:hover h1 {
+        color: #004080;
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile tap */
 @media (hover: none) and (pointer: coarse) {
     .home-link:active h1 {
         color: #004080;
