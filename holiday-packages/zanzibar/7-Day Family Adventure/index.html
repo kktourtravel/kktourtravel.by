@@ -284,7 +284,41 @@
 .contact-info {
   display: none; /* hide desktop nav on mobile */
 }
+/* ===========================
+HOME LINK HOVER + MOBILE TAP
+=========================== */
 
+/* Make the whole logo/title clickable */
+.home-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Smooth transition */
+.home-link h1 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Desktop hover effect */
+@media (hover: hover) and (pointer: fine) {
+    .home-link:hover h1 {
+        color: #004080; /* Exact KK Tour & Travel brand blue */
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile tap effect */
+@media (hover: none) and (pointer: coarse) {
+    .home-link:active h1 {
+        color: #004080;
+        transform: scale(1.05);
+    }
+}
+
+      
     }
   </style>
 </head>
@@ -293,7 +327,8 @@
 
 <header>
   <div class="header-content">
-    <div class="logo-container">
+        <div class="logo-container">
+          <a href="/" class="home-link">
       <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
       <h1>KK Tour & Travel</h1>
     </div>
