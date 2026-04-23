@@ -1,284 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Holiday Packages | KK Tour & Travel</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Holiday Packages | KK Tour & Travel</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f6ff;
-      color: #333;
-      line-height: 1.6;
-      margin-top: 80px; /* IMPORTANT for fixed header */
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f6ff;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 80px;
+}
 
-    /* ===========================
-       HEADER (Copied from index.html)
-       =========================== */
-    header {
-      background: linear-gradient(135deg, #004080, #0066cc);
-      color: white;
-      padding: 10px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+/* ===========================
+   HEADER
+=========================== */
+header {
+  background: linear-gradient(135deg, #004080, #0066cc);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
-    .header-content {
-      display: flex;
-      align-items: center;
-      max-width: 100%;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      height: 56px;
-    }
+.header-content {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  height: 56px;
+  gap: 20px;
+}
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      margin-right: 20px;
-      height: 42px;
-    }
+/* HOME LINK (Logo + Text) */
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 42px;
+}
 
-    header img {
-      max-width: 70px;
-      height: auto;
-      margin-right: 5px;
-      border-radius: 5px;
-    }
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit; /* keeps white color */
+}
 
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      flex: 1;
-    }
+.home-link h1 {
+  transition: transform 0.3s ease;
+}
 
-    .contact-info {
-      text-align: right;
-      width: auto;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.home-link:hover h1 {
+  transform: scale(1.05); /* subtle zoom */
+}
 
-    .contact-info a {
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 0.85rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
+header img {
+  max-width: 70px;
+  height: auto;
+  border-radius: 5px;
+}
 
-    .contact-info a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
+}
 
-    .nav-btn {
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.3s;
-      text-decoration: none;
-      background: transparent;
-      font-weight: 600;
-    }
+/* Desktop Navigation */
+.contact-info {
+  text-align: right;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-    .nav-btn:hover {
-      color: #FF8C00;
-      transform: translateY(-2px);
-    }
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
 
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 10px 0;
-      }
+.contact-info a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
-      .logo-container {
-        margin-right: 0;
-        margin-bottom: 10px;
-        justify-content: center;
-        height: auto;
-      }
+.nav-btn {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+  text-decoration: none;
+  background: transparent;
+  font-weight: 600;
+}
 
-      header img {
-        margin-right: 0;
-        margin-bottom: 10px;
-        max-width: 60px;
-      }
+.nav-btn:hover {
+  color: #FF8C00;
+  transform: translateY(-2px);
+}
 
-      header h1 {
-        font-size: 1.3rem;
-      }
+/* ===========================
+   MOBILE MENU (3-DOT)
+=========================== */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 5px 10px;
+  color: white;
+}
 
-      .contact-info {
-        text-align: center;
-        width: 100%;
-        margin-top: 10px;
-      }
-    }
+.mobile-menu {
+  display: none;
+  background: white;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 15px 0;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 999;
+}
 
-    /* ===========================
-       COUNTRY SELECTOR
-       =========================== */
-    .country-selector {
-      text-align: center;
-      padding: 35px 20px;
-      background: #004080;
-      color: white;
-    }
+.mobile-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #004080;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
-    .country-selector h2 {
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      font-weight: 700;
-    }
+.mobile-menu a:hover {
+  background: #f0f6ff;
+}
 
-    .country-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+/* MOBILE HEADER BEHAVIOR */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
 
-    .country-box {
-      background: white;
-      color: #004080;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+  .contact-info {
+    display: none;
+  }
 
-    .country-box:hover {
-      background: #0066cc;
-      color: white;
-      transform: translateY(-5px);
-    }
+  .header-content {
+    justify-content: space-between;
+  }
+}
 
-    /* ===========================
-       PACKAGE SECTIONS
-       =========================== */
-    .package-section {
-      padding: 60px 20px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
+/* ===========================
+   COUNTRY SELECTOR
+=========================== */
+.country-selector {
+  text-align: center;
+  padding: 35px 20px;
+  background: #004080;
+  color: white;
+}
 
-    .package-section h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      color: #004080;
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
+.country-selector h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
 
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    .package-card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
+.country-box {
+  background: white;
+  color: #004080;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
-    .package-card:hover {
-      transform: translateY(-5px);
-    }
+.country-box:hover {
+  background: #0066cc;
+  color: white;
+  transform: translateY(-5px);
+}
 
-    .package-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
+/* ===========================
+   PACKAGE SECTIONS
+=========================== */
+.package-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
 
-    .package-card h3 {
-      font-size: 1.4rem;
-      color: #004080;
-      margin-bottom: 10px;
-    }
+.package-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #004080;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
 
-    .package-short {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 15px;
-    }
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
 
-    .package-highlights {
-      text-align: left;
-      margin: 15px 0;
-      color: #004080;
-      font-weight: 600;
-      padding-left: 18px;
-    }
+.package-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
 
-    .package-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0066cc;
-      margin: 10px 0;
-    }
+.package-card:hover {
+  transform: translateY(-5px);
+}
 
-    .btn {
-      display: inline-block;
-      background: #004080;
-      color: white;
-      padding: 10px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.package-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
 
-    .btn:hover {
-      background: #0066cc;
-    }
+.package-card h3 {
+  font-size: 1.4rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
 
-    .package-card.empty {
-      background: rgba(0,0,0,0.05);
-      border: 2px dashed #ccc;
-      height: 350px;
-    }
+.package-short {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
 
-    /* ===========================
-       FOOTER (Copied from index.html)
-       =========================== */
-    footer {
-      background: linear-gradient(135deg, #004080, #0066cc);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
+.package-highlights {
+  text-align: left;
+  margin: 15px 0;
+  color: #004080;
+  font-weight: 600;
+  padding-left: 18px;
+}
+
+.package-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0066cc;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #004080;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0066cc;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: linear-gradient(135deg, #004080, #0066cc);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
 
 /* Back to Top Button */
 #backToTop {
@@ -306,37 +337,29 @@
 /* Floating WhatsApp Button */
 #whatsappBtn {
   position: fixed;
-  bottom: 90px; /* sits above Back to Top button */
+  bottom: 90px;
   right: 30px;
-  
-  color: white;
-  padding: 14px 16px;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  
   z-index: 9999;
-  transition: 0.3s ease;
 }
-
-
-
-  </style>
+</style>
 </head>
-
-
 
 <body>
 
 <!-- ===========================
      HEADER
-     =========================== -->
+=========================== -->
 <header>
   <div class="header-content">
+
     <div class="logo-container">
-      <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
-      <h1>KK Tour & Travel</h1>
+      <a href="/" class="home-link">
+        <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
+        <h1>KK Tour & Travel</h1>
+      </a>
     </div>
+
+    <div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
 
     <div class="contact-info">
       <a href="holiday-packages.html" class="nav-btn">Holiday Packages</a>
@@ -346,14 +369,26 @@
       <a href="blog.html" class="nav-btn">Blog</a>
       <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
     </div>
+
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <a href="holiday-packages.html">Holiday Packages</a>
+  <a href="flight-hotel.html">Flight & Hotel</a>
+  <a href="guided-tours.html">Guided Tours</a>
+  <a href="visa-support.html">Visa Support</a>
+  <a href="blog.html">Blog</a>
+  <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
+</div>
+
 <!-- ===========================
      COUNTRY SELECTOR
-     =========================== -->
+=========================== -->
 <section class="country-selector">
   <h2>Select Your Destination</h2>
+
   <div class="country-grid">
     <a href="#zanzibar" class="country-box">Zanzibar</a>
     <a href="#srilanka" class="country-box">Sri Lanka</a>
@@ -361,7 +396,6 @@
     <a href="#uae" class="country-box">UAE</a>
   </div>
 </section>
-
 <!-- ===========================
      ZANZIBAR SECTION
      =========================== -->
@@ -753,37 +787,38 @@
 
 <!-- ===========================
      FOOTER
-     =========================== -->
+=========================== -->
 <footer>
   <p>&copy; 2025 KK Tour & Travel | Professional Travel Agency in Minsk, Belarus</p>
   <p style="margin-top: 10px; opacity: 0.8;">Your journey begins with us</p>
 </footer>
+
 <!-- Back to Top Button -->
 <div id="backToTop">↑ Top</div>
 
-  <script>
-  const backToTopBtn = document.getElementById("backToTop");
+<script>
+const backToTopBtn = document.getElementById("backToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
 
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
+});
 </script>
+
 <!-- Floating WhatsApp Button -->
 <a id="whatsappBtn" href="https://wa.me/375295883464" target="_blank">
   <img src="whatsapp-icon.png" alt="WhatsApp" style="width:32px;height:32px;">
 </a>
 
-  
 </body>
 </html>
