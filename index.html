@@ -8,13 +8,17 @@
 <meta name="keywords" content="travel agency in Minsk, Belarus tour operator, Minsk travel services, guided tours Belarus, holiday packages Belarus, KK Tour & Travel">
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; 
+   margin: 0;
+   padding: 0;
+  }
 
 body {
 background-color: #f9f9f9;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-color: #333;
+margin-top: 90px;
+    color: #333;
+    line-height: 1.7;
 }
 
 /* HEADER */
@@ -32,30 +36,34 @@ z-index: 1000;
 .header-content {
 display: flex;
 align-items: center;
-max-width: 100%;
-margin: 0 auto;
-flex-wrap: wrap;
-height: 56px;
+flex-wrap: nowrap;
+    justify-content: flex-start;
+    height: 56px;
+    gap: 60px; /* Reduced from 100px for better alignment */
 }
 
 .logo-container {
 display: flex;
 align-items: center;
-margin-right: 20px;
-height: 42px;
 }
-
+/* HOME LINK */
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
 header img {
-max-width: 70px;
-height: auto;
-margin-right: 5px;
-border-radius: 5px;
+    max-width: 65px;
+    height: auto;
+    border-radius: 5px;
 }
 
 header h1 {
 font-size: 1.5rem;
 margin: 0;
-flex: 1;
+white-space: nowrap;
 }
 
 .contact-info {
@@ -207,6 +215,7 @@ margin-top: 15px;
 
 .find-out-more:hover { color: #FF8C00; }
 
+  
 /* CONTACT SECTION */
 .contact-section {
 background: #004080;
@@ -289,26 +298,74 @@ visibility: visible;
 background: #0066cc;
 transform: translateY(-3px);
 }
+  /* ===========================
+MOBILE MENU
+=========================== */
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 5px 10px;
+}
+
+.mobile-menu {
+    display: none;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 999;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #004080;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.mobile-menu a:hover {
+    background: #f0f6ff;
+}
+  
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="header-content">
-<div class="logo-container">
+<!-- UPDATED HOME LINK -->
+    <div class="logo-container">
+        <a href="/" class="home-link">
 <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
 <h1>KK Tour & Travel</h1>
+        </a>
 </div>
+<div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
 
-<div class="contact-info">
-<a href="holiday-packages/" class="nav-btn">Holiday Packages</a>
-<a href="flight-hotel/" class="nav-btn">Flight & Hotel</a>
-<a href="guided-tours/" class="nav-btn">Guided Tours</a>
-<a href="visa-support/" class="nav-btn">Visa Support</a>
-<a href="blog/" class="nav-btn">Blog</a>
-<a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
-</div>
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="/holiday-packages/">Holiday Packages</a>
+        <a href="/flight-hotel/">Flight & Hotel</a>
+        <a href="/guided-tours/">Guided Tours</a>
+        <a href="/visa-support/">Visa Support</a>
+        <a href="/blog/">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 Email Us</a>
+    </div>
+
+    <div class="contact-info">
+        <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
+        <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
+        <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
+        <a href="/visa-support/" class="nav-btn">Visa Support</a>
+        <a href="/blog/" class="nav-btn">Blog</a>
+        <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+    </div>
 </div>
 </header>
 
