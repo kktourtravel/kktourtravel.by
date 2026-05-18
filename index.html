@@ -298,41 +298,69 @@ transform: translateY(-3px);
   /* ===========================
 MOBILE MENU
 =========================== */
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .contact-info {
+        display: none; /* hide desktop nav on mobile */
+    }
 
-.mobile-menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    margin-left: auto;
-    padding: 5px 10px;
+    .mobile-menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        margin-left: auto;
+        color: white;
+        padding: 5px 10px;
+    }
+
+    .mobile-menu {
+        display: none;
+        background: #004080;
+        width: 200px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        padding: 10px 0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: auto;
+        z-index: 999;
+        border-radius: 0 0 0 8px;
+    }
+
+    .mobile-menu.open {
+        display: block;
+    }
+
+    .mobile-menu a {
+        display: block;
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+        color: #FFFFFF;
+    }
+
+    .mobile-menu a:hover {
+        background: rgba(255,255,255,0.15);
+    }
 }
 
-.mobile-menu {
-    display: none;
-    background: white;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 15px 0;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    z-index: 999;
+@media (min-width: 769px) {
+    .mobile-menu-icon {
+        display: none; /* hide 3dot on desktop */
+    }
+
+    .mobile-menu {
+        display: none !important; /* always hidden on desktop */
+    }
 }
 
-.mobile-menu a {
-    display: block;
-    padding: 12px 20px;
-    color: #004080;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.mobile-menu a:hover {
-    background: #f0f6ff;
-}
-  .email-btn {
-    color: #FF8C00; /* change this to any color you want */
-}
+   
 </style>
 </head>
 
@@ -476,7 +504,22 @@ MOBILE MENU
 
 <div class="scroll-to-top" id="scrollToTop">↑</div>
 
+
 <script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+}
+
+document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.querySelector('.mobile-menu-icon');
+    if (!menu.contains(e.target) && !icon.contains(e.target)) {
+        menu.classList.remove('open');
+    }
+});
+
+// your existing scroll scripts below...
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
 window.addEventListener('scroll', function() {
