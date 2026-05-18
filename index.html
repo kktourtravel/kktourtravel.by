@@ -32,16 +32,15 @@ width: 100%;
 top: 0;
 z-index: 1000;
 }
-.header-content {
+   .header-content {
     display: flex;
     align-items: center;
-    justify-content: start;
-    margin: 0 auto;
+    justify-content: space-between; /* FIX: pushes nav + 3 dots to right */
     flex-wrap: nowrap;
     height: 65px;
-    gap: 100px;
+    gap: 100px; /* FIX: reduces spacing so items fit */
 }
-   
+
 .logo-container {
 display: flex;
 align-items: center;
@@ -332,9 +331,9 @@ transform: translateY(-3px);
     display: none;
     font-size: 28px;
     cursor: pointer;
-    margin-left: auto;
     padding: 5px 10px;
     color: white;
+    margin-left: auto; /* ensures icon stays on far right */
 }
 
 .mobile-menu {
@@ -372,12 +371,10 @@ transform: translateY(-3px);
 .mobile-menu a:hover {
     background: rgba(255,255,255,0.15);
 }
-
 @media (max-width: 600px) {
     .contact-info {
         display: none;
     }
-
     .mobile-menu-icon {
         display: block;
     }
@@ -404,6 +401,7 @@ transform: translateY(-3px);
    <header>
     <div class="header-content">
 
+        <!-- LOGO + TITLE -->
         <div class="logo-container">
             <a href="/" class="home-link">
                 <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
@@ -411,6 +409,7 @@ transform: translateY(-3px);
             </a>
         </div>
 
+        <!-- DESKTOP NAVIGATION -->
         <div class="contact-info">
             <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
             <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
@@ -420,20 +419,21 @@ transform: translateY(-3px);
             <a href="mailto:info@kktourtravel.by" class="nav-btn email-btn">📧 info@kktourtravel.by</a>
         </div>
 
-        <!-- 3-dot icon LAST so it sits on the far right -->
+        <!-- 3-DOT MENU ICON (RIGHT SIDE) -->
         <div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
-
-        <div id="mobileMenu" class="mobile-menu">
-            <a href="/holiday-packages/">Holiday Packages</a>
-            <a href="/flight-hotel/">Flight & Hotel</a>
-            <a href="/guided-tours/">Guided Tours</a>
-            <a href="/visa-support/">Visa Support</a>
-            <a href="/blog/">Blog</a>
-            <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
-        </div>
 
     </div>
 </header>
+
+<!-- ⭐ MOBILE MENU MUST BE OUTSIDE HEADER -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="/holiday-packages/">Holiday Packages</a>
+    <a href="/flight-hotel/">Flight & Hotel</a>
+    <a href="/guided-tours/">Guided Tours</a>
+    <a href="/visa-support/">Visa Support</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+</div>
 
 <div class="container">
 
