@@ -327,101 +327,70 @@ visibility: visible;
 background: #0066cc;
 transform: translateY(-3px);
 }
-   /* ===========================
-MOBILE MENU
-=========================== */
-
+   /* MOBILE MENU */
 .mobile-menu-icon {
     display: none;
     font-size: 28px;
     cursor: pointer;
     margin-left: auto;
     padding: 5px 10px;
-   color: white;
+    color: white;
 }
 
 .mobile-menu {
     display: none;
-    background: white;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 15px 0;
+    background: #004080;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    padding: 10px 0;
     position: absolute;
-    top: 70px;
-    left: 0;
-    z-index: 999;
+    top: 65px;
+    right: 0;
+    left: auto;
+    z-index: 9999;
+    border-radius: 0 0 0 8px;
 }
+
+.mobile-menu.open {
+    display: block;
+}
+
 .mobile-menu a {
     display: block;
     padding: 12px 20px;
-    color: #004080;
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+    color: #FF8C00;
 }
 
 .mobile-menu a:hover {
-    background: #f0f6ff;
+    background: rgba(255,255,255,0.15);
 }
-
-/* ===========================
-MOBILE OPTIMIZATION
-=========================== */
 
 @media (max-width: 600px) {
     .contact-info {
-        display: none; /* hide desktop nav on mobile */
+        display: none;
     }
 
     .mobile-menu-icon {
         display: block;
-        font-size: 28px;
-        cursor: pointer;
-        margin-left: auto;
-        color: white;
-        padding: 5px 10px;
     }
+}
 
-    .mobile-menu {
+@media (min-width: 600px) {
+    .mobile-menu-icon {
         display: none;
-        background: #004080;
-        width: 200px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        padding: 10px 0;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        left: auto;
-        z-index: 999;
-        border-radius: 0 0 0 8px;
     }
-
-    .mobile-menu.open {
-        display: block;
-    }
-
-    .mobile-menu a {
-        display: block;
-        padding: 12px 20px;
-        color: white;
-        text-decoration: none;
-        font-size: 0.95rem;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .mobile-menu a:last-child {
-        border-bottom: none;
-        color: #FFFFFF;
-    }
-
-    .mobile-menu a:hover {
-        background: rgba(255,255,255,0.15);
-    }
-}
-
     .mobile-menu {
-        display: none !important; /* always hidden on desktop */
+        display: none !important;
     }
-}
+
 #whatsappBtn {
         bottom: 60px;
         right: 20px;
@@ -431,37 +400,39 @@ MOBILE OPTIMIZATION
 </head>
 
 <body>
-<header>
-<!-- UPDATED HOME LINK -->
-   <div class="header-content"> 
-   <div class="logo-container">
-        <a href="/" class="home-link">
-<img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
-<h1>KK Tour & Travel</h1>
-        </a>
-</div>
-<div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
 
-    <div id="mobileMenu" class="mobile-menu">
-        <a href="/holiday-packages/">Holiday Packages</a>
-        <a href="/flight-hotel/">Flight & Hotel</a>
-        <a href="/guided-tours/">Guided Tours</a>
-        <a href="/visa-support/">Visa Support</a>
-        <a href="/blog/">Blog</a>
-       <a href="mailto:info@kktourtravel.by" class="nav-btn email-btn">📧 info@kktourtravel.by</a>
-        
-    </div>
+   <header>
+    <div class="header-content">
 
-    <div class="contact-info">
-        <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
-        <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
-        <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
-        <a href="/visa-support/" class="nav-btn">Visa Support</a>
-        <a href="/blog/" class="nav-btn">Blog</a>
-       <a href="mailto:info@kktourtravel.by" class="nav-btn email-btn">📧 info@kktourtravel.by</a>
-        
+        <div class="logo-container">
+            <a href="/" class="home-link">
+                <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
+                <h1>KK Tour & Travel</h1>
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <a href="/holiday-packages/" class="nav-btn">Holiday Packages</a>
+            <a href="/flight-hotel/" class="nav-btn">Flight & Hotel</a>
+            <a href="/guided-tours/" class="nav-btn">Guided Tours</a>
+            <a href="/visa-support/" class="nav-btn">Visa Support</a>
+            <a href="/blog/" class="nav-btn">Blog</a>
+            <a href="mailto:info@kktourtravel.by" class="nav-btn email-btn">📧 info@kktourtravel.by</a>
+        </div>
+
+        <!-- 3-dot icon LAST so it sits on the far right -->
+        <div class="mobile-menu-icon" onclick="toggleMenu()">⋮</div>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="/holiday-packages/">Holiday Packages</a>
+            <a href="/flight-hotel/">Flight & Hotel</a>
+            <a href="/guided-tours/">Guided Tours</a>
+            <a href="/visa-support/">Visa Support</a>
+            <a href="/blog/">Blog</a>
+            <a href="mailto:info@kktourtravel.by">📧 info@kktourtravel.by</a>
+        </div>
+
     </div>
-</div>
 </header>
 
 <div class="container">
