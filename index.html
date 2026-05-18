@@ -33,13 +33,15 @@ top: 0;
 z-index: 1000;
 }
 .header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* keeps logo left, nav right */
-  flex-wrap: nowrap;              /* prevents wrapping */
-  gap: 60px;                      /* smaller gap */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    height: 65px;
+    gap: 100px;
 }
-
+   
 .logo-container {
 display: flex;
 align-items: center;
@@ -333,10 +335,10 @@ MOBILE MENU
 </head>
 
 <body>
-
 <header>
 <!-- UPDATED HOME LINK -->
-    <div class="logo-container">
+   <div class="header-content"> 
+   <div class="logo-container">
         <a href="/" class="home-link">
 <img src="kktourtravel.png" alt="KK Tour & Travel Logo" />
 <h1>KK Tour & Travel</h1>
