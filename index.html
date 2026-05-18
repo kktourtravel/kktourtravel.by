@@ -32,14 +32,12 @@ width: 100%;
 top: 0;
 z-index: 1000;
 }
-
 .header-content {
-display: flex;
-align-items: center;
-flex-wrap: nowrap;
-    justify-content: flex-start;
-    height: 56px;
-    gap: 60px; /* Reduced from 100px for better alignment */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* keeps logo left, nav right */
+  flex-wrap: nowrap;              /* prevents wrapping */
+  gap: 60px;                      /* smaller gap */
 }
 
 .logo-container {
@@ -73,15 +71,12 @@ display: flex;
 align-items: center;
 gap: 15px;
 }
-
-.contact-info a {
-color: white;
-text-decoration: none;
-display: inline-block;
-font-size: 0.85rem;
-padding: 4px 8px;
-border-radius: 4px;
-transition: background 0.3s;
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;      /* keeps all links on one line */
+  white-space: nowrap;    /* stops line breaks */
 }
 
 .contact-info a:hover {
